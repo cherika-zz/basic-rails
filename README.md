@@ -1,6 +1,6 @@
 Heroku-approved app name is selene-bloccit
 
-[github link](https://github.com/cherika/basic-rails)
+[heroku link](https://github.com/cherika/basic-rails)
 
 ## Bloccit: a Reddit replica to teach the fundamentals of web development and Rails.
 
