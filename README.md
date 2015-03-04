@@ -1,6 +1,10 @@
 Heroku-approved app name is selene-bloccit
 
+<<<<<<< HEAD
 [heroku link](https://selene-bloccit.herokuapp.com)
+=======
+[heroku link](https://selene-bloccit.herokuapp.com/)
+>>>>>>> modify-html
 
 ## Bloccit: a Reddit replica to teach the fundamentals of web development and Rails.
 
