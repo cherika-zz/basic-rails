@@ -11,8 +11,10 @@ require 'faker'
  # Create Posts
  50.times do
    Post.create!(
-     title:  Faker::Lorem.sentence,
-     body:   Faker::Lorem.paragraph
+      title: "Ullam non quos aut.",
+ 			body: "A itaque sit necessitatibus ut. Quos fuga labore qui 
+ 				ab cupiditate voluptate perferendis. Omnis maxime sunt et. 
+ 				Omnis similique non sit qui ipsam sed.",
    )
  end
  posts = Post.all
@@ -21,7 +23,9 @@ require 'faker'
  100.times do
    Comment.create!(
      post: posts.sample,
-     body: Faker::Lorem.paragraph
+     body: "Cupiditate recusandae tenetur vero ut eaque iusto amet. 
+     	 Architecto voluptas esse nostrum aperiam. Est iure nesciunt 
+     	 consectetur.",
    )
  end
  
