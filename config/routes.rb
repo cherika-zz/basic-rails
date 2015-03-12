@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
 
+  get 'tests/index'
+
+  get 'tests/show'
+
+  resources :tests
   resources :posts
   resources :advertisements
 
