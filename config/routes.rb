@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  devise_for :users
   get 'tests/index'
 
   get 'tests/show'
