@@ -1,11 +1,15 @@
 class PostsController < ApplicationController
+
+  before_action :authenticate_user!
+  skip_before_action :set_post, only: [:index]
+
   def index
-  	@posts = Post.all
-      authorize @posts
+    @posts = policy_scope(Post) 
+    authorize Post
   end
 
   def show
-  	@post = Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def new

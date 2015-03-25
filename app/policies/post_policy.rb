@@ -4,4 +4,20 @@ class PostPolicy < ApplicationPolicy
 		true
 	end
 
+	class Scope < Scope
+		attr_reader :user, :scope
+
+		def initialize(user, scope)
+			@user = user
+			@scope = scope
+		end
+
+		def resolve
+			if user && user.admin? 
+				scope.all
+			elsif user
+				scope.where(user: user)
+			end
+		end
+	end
 end
