@@ -3,21 +3,24 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   skip_before_action :set_post, only: [:index]
 
-  def index
-    @posts = policy_scope(Post) 
-    authorize Post
-  end
+  # def index
+  #   @posts = policy_scope(Post) 
+  #   authorize Post
+  # end
 
   def show
     @post = Post.find(params[:id])
+    @topic = Topic.find(params[:topic_id])
   end
 
   def new
     @post = Post.new
+    @topic = Topic.find(params[:topic_id])
       authorize @post
   end
 
   def create
+    @topic = Topic.find(params[:topic_id])
     @post = current_user.posts.build(params.require(:post).permit(:title, :body))
       authorize @post
     if @post.save
@@ -31,10 +34,12 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @topic = Topic.find(params[:topic_id])
       authorize @post
   end
 
   def update
+    @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
       authorize @post
     if @post.update_attributes(params.require(:post).permit(:title, :body))

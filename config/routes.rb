@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
 
 
-  devise_for :users
-  get 'tests/index'
+ 
+ 
 
-  get 'tests/show'
+  devise_for :users
+ 
 
   resources :tests
-  resources :posts
   resources :advertisements
+
+  resources :topics do
+    resources :posts, except: [:index]
+  end
 
 
 
