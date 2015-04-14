@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
 	# scope :ordered_by_reverse_created_at,
 
 
-	has_many :comments
+	has_many :comments, dependent: :destroy
 	belongs_to :user
 	belongs_to :topic
 
