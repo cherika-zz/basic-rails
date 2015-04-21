@@ -1,4 +1,4 @@
- <%= form_for [topic, post, @new_comment] do |f| %>
+ <%= form_for [post, @new_comment] do |f| %>
    <div>
      <%= f.label :body %>
      <%= f.text_field :body, rows: 8, class: 'form-control', placeholder: "Enter comment body" %>
