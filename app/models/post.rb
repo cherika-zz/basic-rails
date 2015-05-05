@@ -9,7 +9,8 @@ class Post < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :topic
 
-	default_scope { order('rank DESC') }
+	scope :visible_to, -> (user) { user ? all : joins(:topic).where('topics.public' => true)}
+	# default_scope { order('rank DESC') }
 	# scope :ordered_by_title, (post, title) { |post| post.title.order}
 
 	validates :title, length: {minimum: 5}, presence: true
