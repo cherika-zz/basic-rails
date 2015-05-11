@@ -34,14 +34,17 @@
    <%= render partial: 'favorites/favorite', locals: {post: @post} %>
    
   </div>
-  <div class="col-md-12">
-    <%= render "comments/form", topic: @topic, post: @post %>
 
-  </div>
 
 
 </div>
 
+<h2>Comments</h2>
+  <div class='js-comments'>
+  <%= render partial: 'comments/comment', collection: @comments %>
+  </div>
+  <div class='new-comment'>
+    <%= render 'comments/form' %>
+  </div>
 
-<%= render partial: 'comments/comment', collection: @comments %>
 
