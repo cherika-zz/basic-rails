@@ -11,6 +11,10 @@
         <div class="tab-pane" id="comments">
             <%= render @comments %>
         </div>
+        <small>
+          <%= pluralize(@user.posts.count, 'post') %>,
+            <div class='js-comments-count'><%= pluralize(@user.comments.count, 'comment') %></div>
+        </small>
     </div>
 </div>
 </div>
